@@ -9,7 +9,7 @@ import javax.persistence.EntityManager;
 import model.Produit;
 
 @Named
-public class ProduitJpaDao implements ProduitsDao {
+public class ProduitJpaDao implements ProduitDao {
 
 	@Inject
 	private EntityManager entityManager;
