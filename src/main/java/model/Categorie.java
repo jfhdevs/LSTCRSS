@@ -28,4 +28,23 @@ public class Categorie implements Serializable {
 	@ManyToMany(mappedBy = "categories", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Set<Marchand> marchands;
 
+//	Constructeurs	
+	public Categorie () {};
+	public Categorie (String nom) { this.nom = nom; }
+	
+//	Getteurs
+	public Long getId()					{ return id; }
+	public String getNom()				{ return nom; }
+	public Set<Produit> getProduits()	{ return produits; }
+	public Set<Marchand> getMarchands()	{ return marchands; }
+	
+//	Setteurs	
+	public void setNom(String nom)						{ this.nom = nom; }
+	public void setMarchands(Set<Marchand> marchands)	{ this.marchands = marchands; }
+	public void setProduits(Set<Produit> produits)		{ this.produits = produits; }
+
+//	Autres
+	@Override
+	public String toString() { return "Categorie [id=" + id + ", nom=" + nom + ", produits=" + produits + ", marchands=" + marchands + "]"; }
+	
 } // class Categorie

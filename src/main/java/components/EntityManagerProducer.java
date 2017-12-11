@@ -27,12 +27,12 @@ public class EntityManagerProducer {
 				jdbcUrl = DEFAULT_JDBC_URL;
 			} // if
 			properties.put("javax.persistence.jdbc.url", jdbcUrl);
-			properties.put("javax.persistence.jdbc.user", "postgres");
-			properties.put("javax.persistence.jdbc.password", "postgres");
-			properties.put("javax.persistence.jdbc.driver", "org.postgresql.Driver");
+//			properties.put("javax.persistence.jdbc.user", "postgres");
+//			properties.put("javax.persistence.jdbc.password", "postgres");
+//			properties.put("javax.persistence.jdbc.driver", "org.postgresql.Driver");
 			properties.put("hibernate.show_sql", "true");
 			EMF = Persistence.createEntityManagerFactory(
-					"BaseListeCoursesLocale", properties);
+					"ListeCourses", properties);
 			LOGGER.info("Successfully created a JPA Entity Manager Factory for DB located at {}", jdbcUrl);
 		} // if
 	} // initEntityManagerFactory
