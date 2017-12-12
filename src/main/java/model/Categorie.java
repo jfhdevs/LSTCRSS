@@ -5,6 +5,10 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import org.junit.Ignore;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "CATEGORIES")
 @NamedQueries({
@@ -22,6 +26,7 @@ public class Categorie implements Serializable {
 	@Column(name = "NOM", unique = true, nullable = false)
 	private String nom;
 
+	@JsonIgnore
 	@OneToMany(mappedBy = "categorie", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
 	private Set<Produit> produits;
 	
@@ -29,7 +34,7 @@ public class Categorie implements Serializable {
 	private Set<Marchand> marchands;
 
 //	Constructeurs	
-	public Categorie () {};
+	public Categorie () {}
 	public Categorie (String nom) { this.nom = nom; }
 	
 //	Getteurs

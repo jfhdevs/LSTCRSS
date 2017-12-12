@@ -17,7 +17,7 @@ public class ProduitJpaDao implements ProduitDao {
 	public ProduitJpaDao() { super(); }
 
 	@Override
-	public List<Produit> findAll(int first, int size) {
+	public List<Produit> findAllProduits(int first, int size) {
 		return entityManager.createNamedQuery("Produit.findAll", Produit.class)
 				.setFirstResult(first).setMaxResults(size).getResultList();
 	} // findAll

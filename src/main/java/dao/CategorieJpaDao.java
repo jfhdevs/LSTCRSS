@@ -17,9 +17,15 @@ public class CategorieJpaDao implements CategorieDao {
 	public CategorieJpaDao() { super(); }
 
 	@Override
+	public List<Categorie> findAll() {
+		return entityManager.createNamedQuery("Categorie.findAll", Categorie.class).getResultList();
+	} // findAll ()
+	
+	@Override
 	public List<Categorie> findAll(int first, int size) {
 		return entityManager.createNamedQuery("Categorie.findAll", Categorie.class)
 				.setFirstResult(first).setMaxResults(size).getResultList();
-	} // findAll
+	} // findAll (first, size)
+
 
 } // class CategorieJpaDao

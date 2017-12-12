@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "PRODUITS")
 @NamedQueries({
-		@NamedQuery(name = "Produit.findAll", query = " SELECT p FROM Produit p ORDER BY p.nom ")
+		@NamedQuery(name = "Produit.findAll", query = " SELECT p FROM Produit p ORDER BY p.categorie, p.nom ")
 }) // NamedQueries
 
 public class Produit implements Serializable {
@@ -28,7 +28,7 @@ public class Produit implements Serializable {
 
 //	Constructeur	
 	
-	public Produit	() {};
+	public Produit	() {}
 	public Produit	(String nom, String quantite, Categorie categorie) {
 		this.nom = nom;
 		this.quantite = quantite;
